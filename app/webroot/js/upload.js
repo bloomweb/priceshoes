@@ -1,5 +1,36 @@
 $(document).ready(function() {
-	
+
+    /**
+     * Slide
+     */
+    $('#single-upload-slide').uploadify({
+        'swf' : '/swf/uploadify.swf',
+        'checkExisting' : '/check-exists.php',
+        'uploader' : '/uploadify.php',
+        'buttonText' : 'Subir Imagen',
+        'width' : 147,
+        'height' : 37,
+        'cancelImg' : '/img/uploadify-cancel.png',
+        'multi' : false,
+        //'debug' : true,
+        'onUploadSuccess' : function(file, data, response) {
+            if(response) {
+                var name = file.name;
+                var fileName = data.split("/");
+                fileName = fileName[(fileName.length - 1)];
+                $("#single-field").val(fileName);
+                $.post("/slider_images/uploadify_add", {
+                    'name' : fileName,
+                    'folder' : 'uploads'
+                }, function(confirm) {
+                    if(confirm) {
+                        $(".preview").html('<img  src="/img/uploads/215x215/' + data + '" />');
+                    }
+                });
+            }
+        }
+    });
+
 	/**
 	 * Categoría
 	 */

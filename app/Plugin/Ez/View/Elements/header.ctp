@@ -122,6 +122,15 @@
 	<li>
 		<a>Navegación</a>
 		<ul>
+			<!-- SLIDER -->
+			<?php if($this -> requestAction('/user_control/users/verifyUserAccess/' , array('ruta' => array('controllers', 'SliderImages', 'admin_index')))) : ?>
+				<li>
+					<?php echo $this -> Html -> link('Slider', array('plugin' => false, 'controller' => 'slider_images', 'action' => 'index')); ?>
+					<?php if($this -> requestAction('/user_control/users/verifyUserAccess/' , array('ruta' => array('controllers', 'SliderImages', 'admin_add')))) : ?>
+						<ul><li><?php echo $this -> Html -> link('Agregar Slide', array('plugin' => false, 'controller' => 'slider_images', 'action' => 'add'));	?></li></ul>
+					<?php endif; ?>
+				</li>
+			<?php endif; ?>
 			<!-- PÁGiNAS -->
 			<?php if($this -> requestAction('/user_control/users/verifyUserAccess/' , array('ruta' => array('controllers', 'Pages', 'admin_index')))) : ?>
 			<li>
