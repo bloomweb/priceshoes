@@ -19,6 +19,24 @@ pf_tempesta_seven-webfont
 	font-weight: normal;
 	font-style: normal;
 }
+/* slider */
+div#next-prev-wrapper {
+    position: absolute;
+    width: 960px;
+}
+a#prev {
+    left: -20px;
+    position: relative;
+    top: -232px;
+    z-index: 100;
+}
+a#next {
+    left: 896px;
+    position: relative;
+    top: -232px;
+    z-index: 100;
+}
+/* slider end */
 p{
 	text-align:justify;
 	margin:10px 0;

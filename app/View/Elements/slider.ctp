@@ -11,8 +11,8 @@
 		<?php print $this->Html->image('uploads' . DS . $slide['SliderImage']['path']); ?>
 	<?php endforeach; ?>
 </div>
-<div class="center">
-	<a href=# id="prev">Prev</a>
-	<a href=# id="next">Next</a>
+<div id="next-prev-wrapper">
+	<a href=# id="prev"><?php echo $this->Html->image('PrevButton.png'); ?></a>
+	<a href=# id="next"><?php echo $this->Html->image('NextButton.png'); ?></a>
 </div>
 <?php echo $this->Html->script('jquery.cycle2.min'); ?>
