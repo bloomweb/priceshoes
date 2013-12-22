@@ -59,10 +59,10 @@
 			if($this->request->is('post')) {
 				$this->SliderImage->create();
 				if($this->SliderImage->save($this->request->data)) {
-					$this->Session->setFlash(__('The slider image has been saved'));
+					$this->Session->setFlash(__('Se guardó la imagen del slider'));
 					$this->redirect(array('action' => 'index'));
 				} else {
-					$this->Session->setFlash(__('The slider image could not be saved. Please, try again.'));
+					$this->Session->setFlash(__('No se pudo guardar la imagen del slider. Por favor, intente de nuevo.'));
 				}
 			}
 		}
@@ -83,13 +83,13 @@
 			}
 			$this->SliderImage->id = $id;
 			if(!$this->SliderImage->exists()) {
-				throw new NotFoundException(__('Invalid slider image'));
+				throw new NotFoundException(__('Imagen de slider no válida'));
 			}
 			if($this->SliderImage->delete()) {
-				$this->Session->setFlash(__('Slider image deleted'));
+				$this->Session->setFlash(__('Se eliminó la imagen de slider'));
 				$this->redirect(array('action' => 'index'));
 			}
-			$this->Session->setFlash(__('Slider image was not deleted'));
+			$this->Session->setFlash(__('No se eliminó la imagen de slider'));
 			$this->redirect(array('action' => 'index'));
 		}
 
