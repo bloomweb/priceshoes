@@ -104,9 +104,9 @@ a.rosa:hover{
 #header a{
 	text-transform:uppercase;
 	text-decoration:none;
-    background: url("../img/logo_png_blanco.png") 15px 15px no-repeat;
-    background-repeat: no-repeat;
+
 }
+
 #header h1.logo , 
 #header .left{
 	float:left;
@@ -128,6 +128,8 @@ a.rosa:hover{
 	width: 410px;
 	height: 125px;
 	text-indent: -9999px;
+    background: url("../img/logo_png_blanco.png") 15px 15px no-repeat;
+    background-repeat: no-repeat;
 }
 #header .opciones{
 	text-transform: uppercase;
@@ -153,10 +155,12 @@ a.rosa:hover{
 	width: 100%;
 	margin-top: 20px;
 	text-align: center;
+    position:relative;
+
 }
 #main-nav li{
 	display: inline-block;
-	position: relative;
+
 }
 #main-nav  a{
 	padding: 0 8px;
@@ -169,9 +173,9 @@ a.rosa:hover{
 #main-nav ul a{
 	color: #fff;
 	display: block;
-	margin-bottom: 18px;
+	margin-bottom: 0;
 	border: none;
-	font-size: 14px;
+	font-size: 12px;
 }
 #main-nav li:first-child a{
 	border: none;
@@ -181,24 +185,25 @@ a.rosa:hover{
 }
 #main-nav #menu-categorias{
 	position:absolute;
-	left:-175px;
+	left:50%;
+    margin-left: -350px;
 	top:12px;	
 	z-index:1;
 	display:none;
+
 }
 #menu-categorias .detalle-submenu{
 	position:absolute;
-	left:50%;
-	margin-left:-23px;
+	left:510px;
+
 }
 #main-nav li:hover #menu-categorias{
 	display:block;
 }
 #menu-categorias .container{
-	margin-top:20px;
-	width:450px;
-	height:165px;
-	padding:20px;
+	margin:8px auto 0 auto;
+	width:680px;
+	padding:10px;
 	background:#E62B7C;
 	text-align:left;
 	-moz-border-radius:5px;
@@ -210,21 +215,29 @@ a.rosa:hover{
 	width:90px;
 	height:170px;
 	float:left;
+
 }
 #menu-categorias .foto-categoria img{
-	margin-top:52.5px;
+	margin-top:52px;
 	width:149px;
+
+
 }
 #menu-categorias ul{
-	width: 420px;
-	margin: 25px auto;
+    text-align: center;
 }
 #menu-categorias ul li{
 	position:inherit;
-	width:140px;
-	text-align:left;
-	display:block;
-	float:left;
+	text-align:center;
+	display:inline-block;
+    border-left: solid 2px white;
+
+}
+#menu-categorias ul li.item-0{
+    border-left:none;
+}
+#main-nav #menu-categorias ul li a{
+    border-left: none;
 }
 #menu-categorias ul img{
 	position:absolute;
@@ -380,7 +393,9 @@ a.rosa:hover{
 }
 #footer .formas-de-pago{
 
-    float: left;
+    margin: 0 auto;
+    width: 500px;
+    padding-bottom: 10px;
 }
 #left-col, 
 #right-col{
@@ -479,11 +494,18 @@ input.invalid{
 	border: solid red 1px;
 	color: red;
 }
-.error, .message{
-	color:#e6db30;
-	font-size:12px;
-	font-family:arial;
-	margin:0;
+ .message, .error{
+    color: black;
+    font-size: 12px;
+    font-family: arial;
+    margin: 0;
+    background: lightgoldenrodyellow;
+    padding: 3px;
+    text-align: center;
+}
+.error{
+    color: black;
+    background: lightcoral;
 }
 .message{
 	margin-bottom:5px;
@@ -675,7 +697,7 @@ margin-left: 10px;
 .captcha{
     float: left;
     margin: 20px 0 0 33px;
-    height: 130px;
+    max-height: 130px;
     overflow: hidden;
 
 }
@@ -1034,12 +1056,13 @@ a.boton-favoritos {
 	padding-left: 37px;
 }
 a.boton-carrito {
-	background: url("../img/Carrito-02.png") no-repeat;
+	background: url("../img/carrito_2.png") no-repeat;
 	display: block;
 	float: left;
 	height: 42px;
 	line-height: 42px;
     width: 184px;
+    padding-left: 37px;
 
 }
 a.boton-facebook {
@@ -1072,7 +1095,7 @@ ul.botones-caracteristicas li.social{
 	margin:15px 0;
 }
 ul.botones-caracteristicas a:link, ul.botones-caracteristicas a:active, ul.botones-caracteristicas a:visited {
-	color:white;
+    color: rgb(100,100,100);
 	font-size: 14px;
 }
 ul.botones-caracteristicas a:hover {
@@ -1099,7 +1122,7 @@ ul.cuadros-tallas ,ul.cuadros-colores{
 	margin-bottom:20px;
 }
 ul.cuadros-tallas li.first-child, ul.cuadros-colores li.first-child {
-	margin: 0;
+
 }
 ul.cuadros-tallas li {
 	border: 1px solid #fff;
@@ -1114,8 +1137,9 @@ ul.cuadros-tallas li {
 	line-height: 26px;
 }
 ul.cuadros-colores li {
-	width: 25px;
-	height: 25px;
+	width: 27px;
+	height: 27px;
+    border-bottom: 2px;
 	display: block;
 	float: left;
 	list-style: none;
@@ -1125,6 +1149,8 @@ ul.cuadros-colores li {
 }
 ul.cuadros-tallas li.selected, ul.cuadros-colores li.selected {
 	border: 2px solid #E62B7C;
+    height: 23px;
+    width: 23px;
 }
 .add-confirm, .add-cart{
 	display:none;

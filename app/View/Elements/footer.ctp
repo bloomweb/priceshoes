@@ -58,13 +58,16 @@
                 </div>
 				<div style='clear:both;'></div>
                 
-				<div class="formas-de-pago">
-					<?php echo $this -> Html -> image('footer-payment.png',array("width"=>"500")); ?>
-				</div>
+
 
 			</div>
 
 			<div style='clear:both;'></div>
+            <div class="formas-de-pago">
+                <?php echo $this -> Html -> image('footer-payment.png',array("width"=>"500",'usemap'=>'imgmap2014112125219')); ?>
+                <map id="imgmap2014112125219" name="imgmap2014112125219"><area shape="rect" alt="síguenos en twitter!!" title="" coords="40,27,113,101" href="https://twitter.com/PriceShoesCO" target="_blank" /><area shape="rect" alt="síguenos en facebook!!" title="" coords="129,27,206,103" href="https://www.facebook.com/priceshoes.co" target="_blank" /><!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) --></map>
+
+            </div>
 		</div>
 		<?php echo $this -> element('second-nav'); ?>
 	</div>
