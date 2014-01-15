@@ -12,7 +12,7 @@ em, i {
 /* Eliminates the doubled-margin bug in IE;
 see http://www.positioniseverything.net/explorer/doubled-margin.html */
 #header ul {
-	display: inline;
+
 	}	
 
 #header form input[type="text"] {
@@ -68,3 +68,6 @@ see http://www.positioniseverything.net/explorer/doubled-margin.html */
 #voices ul li.l1 a, #voices ul li.l2 a {
 	background-color: #fff;
 	}
+.registro.form .calendario input{
+    width:65%;
+}

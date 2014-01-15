@@ -21,18 +21,18 @@ pf_tempesta_seven-webfont
 }
 /* slider */
 div#next-prev-wrapper {
-    position: absolute;
+    position: relative;
     width: 960px;
 }
 a#prev {
     left: -20px;
-    position: relative;
+    position: absolute;
     top: -232px;
     z-index: 100;
 }
 a#next {
-    left: 896px;
-    position: relative;
+    right: -20px;
+    position: absolute;
     top: -232px;
     z-index: 100;
 }
@@ -159,20 +159,19 @@ a.rosa:hover{
 
 }
 #main-nav li{
-	display: inline-block;
+	display: inline;
 
 }
 #main-nav  a{
 	padding: 0 8px;
 	font-size: 14px;
-	display: block;
+
 	color: rgb(100, 100, 100);
 	font-size: 15px;
 	border-left: 4px solid rgb(243,91,176);
 }
 #main-nav ul a{
 	color: #fff;
-	display: block;
 	margin-bottom: 0;
 	border: none;
 	font-size: 12px;
@@ -187,6 +186,7 @@ a.rosa:hover{
 	position:absolute;
 	left:50%;
     margin-left: -350px;
+    width:700px;
 	top:12px;	
 	z-index:1;
 	display:none;
@@ -229,7 +229,7 @@ a.rosa:hover{
 #menu-categorias ul li{
 	position:inherit;
 	text-align:center;
-	display:inline-block;
+	/*display:inline-block; */
     border-left: solid 2px white;
 
 }
@@ -375,7 +375,7 @@ a.rosa:hover{
 	text-align:center;
 }
 #footer_links li{
-	display: inline-block;
+	display: inline;
 	padding-left: 21px;
 	padding-right: 20px;
 	font-size:13px;
