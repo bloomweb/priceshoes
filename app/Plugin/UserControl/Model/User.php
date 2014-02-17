@@ -189,9 +189,18 @@ class User extends UserControlAppModel {
 	);
 	
 	public function verifyDocument() {
-		if(isset($this -> data['User']['document']) && !empty($this -> data['User']['document'])) {
-			if($this -> findByDocument($this -> data['User']['document'])) {
-				return false;
+		$uno = 1;
+		if(
+			isset($this -> data['User']['document'])
+			&& !empty($this -> data['User']['document'])
+		) {
+			$tmp_user = $this -> findByDocument($this -> data['User']['document']);
+			if($tmp_user) {
+				if(($tmp_user['User']['id'] == $this->data['User']['id'])) {
+					return true;
+				} else {
+					return false;
+				}
 			} else {
 				return true;
 			}
@@ -240,18 +249,14 @@ class User extends UserControlAppModel {
 	 * @return true o false acorde si se puede o no guardar la información
 	 */
 	public function beforeSave($options = array()) {
+		$uno = 1;
 		if(isset($this -> data['User']['password']) && !empty($this -> data['User']['password'])) {
 			$this -> data['User']['password'] = AuthComponent::password($this -> data['User']['password']);
 		}
 		if(!isset($this -> data['User']['username']) && isset($this -> data['User']['email'])) {
 			$this -> data['User']['username'] = $this -> data['User']['email'];
 		}
-		if(!isset($this -> data['User']['password']) && isset($this -> data['User']['id']) && !isset($this -> data['User']['role_id'])) {
-			$user = $this -> read(null, $this -> data['User']['id']);
-			if(isset($user['User']['role_id']) && !empty($user['User']['role_id'])) {
-				$this -> data['User']['role_id'] = $user['User']['role_id'];
-			}
-		} elseif(!isset($this -> data['User']['role_id'])) {
+		if(!isset($this -> data['User']['role_id'])) {
 			$this -> data['User']['role_id'] = 3;
 		}
 		return true;

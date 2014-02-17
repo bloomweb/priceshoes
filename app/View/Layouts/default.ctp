@@ -47,6 +47,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this -> Html -> Script('bcart');
 		//echo $this->Html->Script('cufon');
 		echo $this -> Html -> script('common');
+		echo $this -> Html -> script('coupons');
 		//echo $this->Html->Script('HelveticaNeueLT_LightExt2_400-HelveticaNeueLT_LightExt2_400.font');
 		echo $this -> fetch('meta');
 		echo $this -> fetch('css');

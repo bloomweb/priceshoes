@@ -32,6 +32,7 @@ $(function() {
 		$('.to-cart-favoritos.open').removeClass('open');
 		// funciona para
 	});
+
 	$('.to-cart-favoritos .addCartItem').click(function(e) {
 		e.preventDefault();
 		$that = $(this);
@@ -67,6 +68,7 @@ $(function() {
 			}
 		});
 	});
+
 	$('.tabla-carrito').on('click', '.removeCartItem', function(e) {
 		e.preventDefault();
 		$that = $(this);
@@ -107,6 +109,7 @@ $(function() {
 
 		// '/b_cart/shopping_carts/get'
 	});
+
 	// FUNCIONALIDADES FAVORITOS
 	$('.addFavoriteItem').click(function(e) {
 		e.preventDefault();

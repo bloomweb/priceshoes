@@ -1,6 +1,6 @@
 <?php
 	// Cargar el JS de manejo de cupones
-	echo $this -> Html -> script('coupons');
+	// echo $this -> Html -> script('coupons');
 	// Obtener el carrito
 	$shopping_cart = $this -> requestAction('/b_cart/ShoppingCarts/get');
 	$shipment_cost = $this -> requestAction('/configs/getShipmentCost');
@@ -85,7 +85,7 @@
 			</th>
 			<th colspan="1"style="text-align:center; min-width: 180px;">
 				<input id="CouponCode" type="text" style="text-align: center; width: 100px; float: left;" />
-				<input id="SetCoupon" type="submit" value="Aplicar" />
+				<input id="SetCoupon" class="set-coupon" type="submit" value="Aplicar" />
 			</th>
 			<th id="CouponDiscount" style="text-align:center;"></th>
 		</tr>

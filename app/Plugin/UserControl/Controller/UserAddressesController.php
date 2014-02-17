@@ -13,8 +13,10 @@ class UserAddressesController extends UserControlAppController {
 	 */
 	public function beforeFilter() {
 		parent::beforeFilter();		
-		$this -> Auth -> allow('get');
+		$this -> Auth -> allow('*');
+		//$this -> Auth -> allow('get');
 	}
+
 	public function get(){
 		if (!$this -> Auth -> user('id')) {
 			return false;
@@ -63,6 +65,7 @@ class UserAddressesController extends UserControlAppController {
 	 * @return void
 	 */
 	public function edit($id) {
+		$uno = 1;
 		$this -> layout='profile';
 		if (!$this -> Auth -> user('id')) {
 			$this -> redirect(
@@ -102,6 +105,7 @@ class UserAddressesController extends UserControlAppController {
 	 * @return void
 	 */
 	public function delete($id = null) {
+		$uno = 1;
 		if (!$this -> request -> is('post')) {
 			throw new MethodNotAllowedException();
 		}

@@ -1,6 +1,6 @@
 <div id="EmailContainer">
 	<div class="email-header" style="background: #DC3682;">
-		<img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/logo_correos.jpg">
+		<img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/logo_correos.jpg">
 		<h2 style="float: right; margin-right: 30px; padding: 12px; color: white;">Orden Confirmada</h2>
 	</div>
 	<div style="min-height: 10px;"></div>
@@ -22,7 +22,7 @@
 		</p>
 		<p>
 			Esperamos tenerte nuevamente en nuestra tienda virtual<br />
-			<a href="http://<?php echo Configure::read('site_domain'); ?>/tienda-virtual">www.priceshoes.com.co/tienda-virtual</a>
+			<a href="<?php echo Configure::read('site_domain'); ?>/tienda-virtual">www.priceshoes.com.co/tienda-virtual</a>
 		</p>
 		<p>
 			Atentamente,
