@@ -135,7 +135,8 @@ $(function() {
 			if (response.success) {
                 var d = new Date();
                 var n = d.getMilliseconds();
-                $('.resumen-carrito').load('/pages/resumenCarrito?_t='+n);
+                //$('.resumen-carrito').load('/pages/resumenCarrito?_t='+n);
+                $('.resumen-favoritos').load('/pages/resumenFavoritos?_t='+n);
 			} else {
 				alert(response.message);
 			}
@@ -151,7 +152,9 @@ $(function() {
 		}).show();
 		BJS.JSON($that.attr('href'), {}, function(response) {
 			if (response.success) {
-				$('.tabla-carrito .content').load('/pages/tablaFavoritos', function() {
+                var d = new Date();
+                var n = d.getMilliseconds();
+				$('.tabla-carrito .content').load('/pages/tablaFavoritos?_t='+n, function() {
 					$('.actualizando').hide();
 				});
 			} else {
@@ -247,7 +250,7 @@ $(function() {
 			that.last_height = parseFloat($(".imagen-container img").height());
 			that.last_top = parseFloat($(".imagen-container img").css("top"));
 			that.last_left = parseFloat($(".imagen-container img").css("left"));
-		},
+		}
 	};
 
 	galeria.init();

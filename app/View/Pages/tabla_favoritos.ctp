@@ -8,7 +8,7 @@
 			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="2" class="tablaCarrito">
 					<tr class="entryTableHeader">
 						<th colspan="2" align="center">Producto</th>
-						<th align="center">Precio</td>
+						<th align="center">Precio</th>
 					</tr>
 					<?php foreach($favoritos['FavoriteItem'] as $item) { ?>
 					<tr class="content">

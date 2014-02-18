@@ -25,6 +25,8 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('.tabla-carrito .content').load('/pages/tablaFavoritos');
+		var d = new Date();
+		var n = d.getMilliseconds();
+		$('.tabla-carrito .content').load('/pages/tablaFavoritos?_t='+n);
 	});
 </script>

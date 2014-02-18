@@ -18,11 +18,14 @@
 
 $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" debug='true'>
 	<head>
-        <?php //  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> ?>
-		<?php echo $this -> Html -> charset(); ?>
+        <?php echo $this -> Html -> charset(); ?>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, proxy-revalidate">
+		<meta http-equiv="expires" content="0">
 		<?php /* if(isset($product)): ?>
 			 <meta property="og:title" content="<?php $product['Product']['name'] ?>" />
 			 <meta property="og:type" content="company" />
@@ -55,9 +58,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
         <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="/css/ie.css">
+
         <![endif]-->
-
-
 	</head>
 	<body class="<?php echo $this -> action; ?>">
 		<div id="container">
