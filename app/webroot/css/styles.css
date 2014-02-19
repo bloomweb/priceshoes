@@ -8,7 +8,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
-pf_tempesta_seven-webfont
+
 @font-face {
 	font-family: 'PF Tempesta Seven';
 	src: url('../fonts/pf_tempesta_seven-webfont.eot');
@@ -733,26 +733,28 @@ margin-left: 10px;
 }
 #profile-menu li{
 	display: inline;
-	border-top: solid 1px #E62B7C;
-	border-bottom: solid 1px #E62B7C;
+	border-top: solid 1px rgb(100,100,100);
+	border-bottom: solid 1px rgb(100,100,100);
 	padding:5px;
+
 }
 #profile-menu a{
-	color:#E62B7C;
+    color:rgb(100,100,100);
+
 }
 #profile-menu li:hover,
 .profile #profile-menu  li.profile,
 .edit #profile-menu   li.edit,
 .addresses #profile-menu   li.addresses,
 .orders  #profile-menu  li.orders{
-	border-color:white;
+	border-color:#E62B7C;
 }
 #profile-menu li:hover a,
 .profile #profile-menu  li.profile a,
 .edit #profile-menu   li.edit a,
 .addresses #profile-menu   li.addresses a,
 .orders  #profile-menu  li.orders a{
-	color:white;
+    color:#E62B7C;
 }
 
 #right-col .content{
@@ -776,6 +778,9 @@ margin-left: 10px;
 	float:right;
 	margin-right:2px;
 	margin-left:3px;
+    margin-top: 5px;
+    line-height: 15px;
+    height: 15px;
 }
 .userAddresses .submit{
 	float:left;
@@ -1106,6 +1111,12 @@ ul.botones-caracteristicas a:link, ul.botones-caracteristicas a:active, ul.boton
     color: rgb(100,100,100);
 	font-size: 14px;
 }
+ul.botones-caracteristicas .to-cart.open a:link,
+ul.botones-caracteristicas .to-cart.open a:active,
+ul.botones-caracteristicas .to-cart.open a:visited {
+    color: white;
+    font-size: 14px;
+}
 ul.botones-caracteristicas a:hover {
 	color: #E62B7C;
 	font-size: 14px;
@@ -1373,6 +1384,7 @@ table.tablaCarrito h3{
 .to-cart form, .to-cart-favoritos form {
 	display:none;
 }
+
 .to-cart.open form, .to-cart-favoritos.open form {
 	clear:both;
 	display:block;
@@ -1412,6 +1424,7 @@ table.tablaCarrito h3{
 	display: block;
 	line-height: 22px;
 	height: 22px;
+    color:white;
 }
 .to-cart.open form a.button:hover{
 	padding: 3px;

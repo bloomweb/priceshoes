@@ -99,6 +99,7 @@
 					<div class="actions">
 						<a class="button addCartItem" href="/b_cart/shopping_carts/addCartItem/">Aceptar</a>
 						<a class="button cancelar" href="#">Cancelar</a>
+                        <div style="clear:both;"></div>
 					</div>
 					<?php echo $this -> Form ->end();?>
 					<div class="add-cart">

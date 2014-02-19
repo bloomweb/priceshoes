@@ -1,8 +1,6 @@
 /* This style sheet is specifically for Internet Explorer (any version) */
 
-body {
-	background: #f1efe8 url(../img/bg-dark.jpg) repeat-x;
-	}
+
 	
 /* This property added for IE weirdness with Cufon */
 em, i {
@@ -19,11 +17,9 @@ see http://www.positioniseverything.net/explorer/doubled-margin.html */
 	padding-top: 4px;
 	padding-bottom: 2px;
 	}
-	
-#main-featurette {	
-	background: #f1efe8 url(../img/bg-colosseo-overlay.jpg) no-repeat left 21px;
-	}
-	
+
+
+
 #main-featurette li a {
 	white-space: nowrap;
 	}
@@ -70,4 +66,7 @@ see http://www.positioniseverything.net/explorer/doubled-margin.html */
 	}
 .registro.form .calendario input{
     width:65%;
+}
+.to-cart.open {
+    height:140px;
 }
