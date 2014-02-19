@@ -15,7 +15,7 @@
 		<div class="input calendario">
 			<br />
 			<label>Fecha De Nacimiento</label>
-			<input class="date" type="date" name="data[User][birthday]">
+			<input class="date" type="date" id="UserBirthday" name="data[User][birthday]" value="<?php echo $this->request->data['User']['birthday']; ?>">
 			<div style="clear:both"></div>
 		</div>
 	</fieldset>

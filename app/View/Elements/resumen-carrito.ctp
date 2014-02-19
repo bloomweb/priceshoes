@@ -7,6 +7,8 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('.resumen-carrito').load('/pages/resumenCarrito');
+		var d = new Date();
+		var n = d.getMilliseconds();
+		$('.resumen-carrito').load('/pages/resumenCarrito?_t='+n);
 	});
 </script>

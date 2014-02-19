@@ -1,6 +1,6 @@
 <div>
 	<div class="email-header" style="background: #DC3682;">
-		<img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/logo_correos.jpg">
+		<img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/logo_correos.jpg">
 		<h2 style="float: right; margin-right: 30px; padding: 12px; color: white;">Restablecer Contraseña</h2>
 	</div>
 	<div class="email-content">

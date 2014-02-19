@@ -1,6 +1,6 @@
 <div id="EmailContainer">
 	<div class="email-header" style="background: #DC3682;">
-		<img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/logo_correos.jpg">
+		<img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/logo_correos.jpg">
 		<h2 style="float: right; margin-right: 30px; padding: 12px; color: white;">Orden Confirmada</h2>
 	</div>
 	<div style="min-height: 10px;"></div>
@@ -15,9 +15,9 @@
 		<div style="margin-left: auto; margin-bottom: auto; margin-right: auto; margin-top: auto; max-height: 240px; max-width: 530px; min-height: 240px; min-width: 530px;">
 			<table style="margin: auto; min-width: 524px; padding-right: 70px;">
 				<tr>
-					<td width="210" align="right"><img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/check_correos.jpg"></td>
-					<td width="60" align="center"><img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/arrow_correos.jpg"></td>
-					<td width="240" align="left"><img alt="Price Shoes" src="http://<?php echo Configure::read('site_domain'); ?>/img/check_correos.jpg"></td>
+					<td width="210" align="right"><img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/check_correos.jpg"></td>
+					<td width="60" align="center"><img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/arrow_correos.jpg"></td>
+					<td width="240" align="left"><img alt="Price Shoes" src="<?php echo Configure::read('site_domain'); ?>/app/webroot/img/check_correos.jpg"></td>
 				</tr>
 			</table>
 			<table style="margin: auto; min-width: 524px;">
@@ -80,7 +80,7 @@
 				<?php $subTotal = 0; ?>
 				<?php foreach($order['OrderItem'] as $key => $item) : ?>
 				<tr>
-					<td><img alt="<?php echo $item['Product']['reference']; ?>" src="http://<?php echo Configure::read('site_domain') . '/img/uploads/50x50/' . $item['image']; ?>"></td>
+					<td><img alt="<?php echo $item['Product']['reference']; ?>" src="<?php echo Configure::read('site_domain') . '/app/webroot/img/uploads/50x50/' . $item['image']; ?>"></td>
 					<td style="text-align: center;"><?php echo '$ ' . number_format($item['single_item_price'], 2); ?></td>
 					<td style="text-align: center;"><?php echo $item['quantity']; ?></td>
 					<td style="text-align: center;"><?php echo '$ ' . number_format($item['total_items_price'], 2); ?></td>
@@ -103,7 +103,7 @@
 		<?php } ?>
 		<p>
 			Esperamos tenerte nuevamente en nuestra tienda virtual<br />
-			<a href="http://<?php echo Configure::read('site_domain'); ?>/tienda-virtual">www.priceshoes.com.co/tienda-virtual</a>
+			<a href="<?php echo Configure::read('site_domain'); ?>/tienda-virtual">www.priceshoes.com.co/tienda-virtual</a>
 		</p>
 		<p>
 			Si tienes alguna pregunta o inquietud acerca de tu orden, por favor cont&aacute;ctanos al siguiente correo electr&oacute;nico: <a href="mailto:servicioalcliente@priceshoes.com.co">servicioalcliente@priceshoes.com.co</a>

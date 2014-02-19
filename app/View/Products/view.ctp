@@ -135,7 +135,7 @@
 				<div class="fb-like" data-href="http://priceshoes.com.co/products/view/<?php echo $product['Product']['id']?>" data-send="false" data-width="280" data-show-faces="true"></div>
 					<div style="clear:left"></div>
 			    -->
-				<fb:like href="<?php echo Configure::read('site_domain').$this -> Html -> url('');?>" width="200" height="80"/>
+				<fb:like href="<?php echo Configure::read('site_domain').$this -> Html -> url('');?>" width="200" height="80"></fb:like>
 				</li>
 				
 			</ul>

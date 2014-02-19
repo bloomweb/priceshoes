@@ -3,7 +3,7 @@ $favoritos = $this -> requestAction('/favorites/get');
 ?>
 <?php if(isset($favoritos['FavoriteItem']) && !empty($favoritos['FavoriteItem'])):?>
 <?php $subTotal=0; ?>
-	<div class="container-tabla">	
+	<div class="container-tabla">
 		<table id="cesta-tabla">
 			<?php foreach($favoritos['FavoriteItem'] as $item):?>
 				<tr>
