@@ -75,7 +75,7 @@ a{
 	text-decoration:none;
 }
 a.rosa:hover{
-	color:white;
+	color:black;
 }
 
 /*ESTILOS DEL LAYOUT*/
@@ -797,7 +797,15 @@ margin-left: 10px;
 /*END PROFILE*/
 /*PAGES*/
 .caja-producto-lateral{
-	border: 1px solid white;
+	border: 1px solid #9a9a9a;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+
 }
 .caja-producto-lateral .titulo {
 	background: #de3786;
@@ -832,7 +840,7 @@ tr#FinalResumenCarrito td.resumen-final {
 	line-height: 26px;
 }
 #promocion {
-	color: white;
+	color: rgb(100,100,100);
 	float: left;
 	width: 100%;
 	margin-bottom: 20px;
@@ -884,7 +892,7 @@ tr#FinalResumenCarrito td.resumen-final {
 
 .promocionados ul a:link, .promocionados a:active, .promocionados a:visited {
 	text-decoration: none;
-	color: white;
+	color: rgb(100,100,100);
 }
 .promocionados ul li a.name {
 	height: 50px;
@@ -913,7 +921,7 @@ tr#FinalResumenCarrito td.resumen-final {
 	display: block;
 	float: left;
 	width: 215px;
-	color: white;
+	color:rgb(100,100,100);
 	text-align: center;
 	margin-bottom: 15px;
 	margin-right:17px;
@@ -1174,7 +1182,7 @@ max-height: 270px;
 }
 #cesta-tabla {
 width: 95%;
-color: white;
+color: rgb(100,100,100);;
 background: none;
 margin: 0 auto;
 font-size: 12px;
