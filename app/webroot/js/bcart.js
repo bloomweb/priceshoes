@@ -99,7 +99,7 @@ $(function() {
 		var quantity = $that.find('select').val();
 		BJS.JSON('/b_cart/shopping_carts/updateCartItem/' + $that.attr('rel') + "/" + quantity, {}, function(response) {
 			if (response.success) {
-				$('.tabla-carrito .content').load('/pages/tablaCarrito', function() {
+				$('.tabla-carrito .content table').load('/pages/tablaCarrito', function() {
 					$('.actualizando').hide();
 				});
 			} else {
