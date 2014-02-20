@@ -16,14 +16,18 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+//$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" debug='true'>
 	<head>
-        <?php echo $this -> Html -> charset(); ?>
-		<meta http-equiv="x-ua-compatible" content="IE=8">
+		<?php echo $this -> Html -> charset(); ?>
+		<?php
+			if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
+				header('X-UA-Compatible: IE=edge,chrome=1');
+			}
+		?>
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, proxy-revalidate">
 		<meta http-equiv="expires" content="0">
@@ -36,8 +40,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			 <meta property="og:description" content="<?php echo $product['Product']['description']?>">
 			 <meta property="fb:app_id" content="157362437721922" />
 		<?php endif; */ ?>
-		<title> <?php echo 'PriceShoes'?> ::
-			<?php echo $title_for_layout; ?> </title>
+		<title> <?php echo 'PriceShoes'?> :: <?php echo $title_for_layout; ?> </title>
 		<?php
 		echo $this -> Html -> meta('icon');
 

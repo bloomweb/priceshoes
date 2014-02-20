@@ -22,7 +22,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>	
 		<?php echo $this->Html->charset(); ?>
-	<meta http-equiv="x-ua-compatible" content="IE=8">
+	<?php
+		if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
+			header('X-UA-Compatible: IE=edge,chrome=1');
+		}
+	?>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, proxy-revalidate">
 	<meta http-equiv="expires" content="0">

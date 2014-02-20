@@ -24,7 +24,11 @@
 <head>
 	<?php //  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> ?>
 	<?php echo $this->Html->charset(); ?>
-	<meta http-equiv="x-ua-compatible" content="IE=8">
+	<?php
+		if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
+			header('X-UA-Compatible: IE=edge,chrome=1');
+		}
+	?>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, proxy-revalidate">
 	<meta http-equiv="expires" content="0">

@@ -547,6 +547,7 @@ class UsersController extends UserControlAppController {
 	 * @return void
 	 */
 	public function login() {
+		$cart_info = $this -> requestAction('/b_cart/ShoppingCarts/get');
 		/**
 		 * Llevar un registro de cuantos inicios de sesión se tienen
 		 */
@@ -585,6 +586,7 @@ class UsersController extends UserControlAppController {
 					// Verificar la respuesta de ReCaptcha
 					if ($resp -> is_valid) {
 						if($this -> request -> is('post')) {
+							// Guardar datos del carrito actual
 							if ($this -> Auth -> login()) {
 								$this -> Cookie -> delete('User.login_attempts');
 								//$this -> Session -> setFlash(__('Has iniciado sesión.'), 'crud/success');
@@ -605,6 +607,8 @@ class UsersController extends UserControlAppController {
 		} else {
 			if($this -> request -> is('post')) {
 				if ($this -> Auth -> login()) {
+					$user_cart_info = $this -> requestAction('/b_cart/ShoppingCarts/get');
+					$this->sync_logged_user_cart($cart_info, $user_cart_info);
 					$this -> Cookie -> delete('User.login_attempts');
 					//$this -> Session -> setFlash(__('Has iniciado sesión.'), 'crud/success');
 					return $this -> redirect($this -> Auth -> redirect());
@@ -619,6 +623,27 @@ class UsersController extends UserControlAppController {
 		$this -> set('login_attempts', $login_attempts);
 		$this -> set('error', $error);
 		$this -> set('public_key', $this -> public_key);
+	}
+
+	public function sync_logged_user_cart($unlogged_cart, $logged_cart) {
+		foreach($unlogged_cart['CartItem'] as $key_1 => $cart_item) {
+			$in_cart = false;
+			foreach($logged_cart['CartItem'] as $key_2 => $logged_cart_item) {
+				if($logged_cart_item['product_id'] == $cart_item['product_id']) $in_cart = true;
+			}
+			if(!$in_cart) {
+				unset($cart_item['id']);
+				$logged_cart['CartItem'][] = $cart_item;
+			}
+		}
+		foreach($logged_cart['CartItem'] as $key => $logged_cart_item) {
+			$logged_cart['CartItem'][$key]['shopping_cart_id'] = $logged_cart['ShoppingCart']['id'];
+		}
+		$this->loadModel('CartItem');
+		$this->CartItem->saveAll($logged_cart['CartItem']);
+		foreach($unlogged_cart['CartItem'] as $key => $cart_item) {
+			$this->CartItem->delete($cart_item['id']);
+		}
 	}
 
 	/**
