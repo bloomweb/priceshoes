@@ -19,6 +19,21 @@
 	font-weight: normal;
 	font-style: normal;
 }
+#footer .footer-info {
+    padding: 20px 240px;
+}
+#footer .footer-info h4 {
+    display: block;
+    float: left;
+    padding: 12px 5px 0 0;
+}
+#footer .footer-info a {
+    display: block;
+    float: left;
+}
+#bloom-logo-footer {
+    height: 29px;
+}
 /* slider */
 div#next-prev-wrapper {
     position: relative;

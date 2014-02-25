@@ -25,5 +25,4 @@
 		?>
 	</li>		
 </ul>
-<h4>© 2011 PriceShoes Online Store. Todos los derechos Reservados.</h4>
 </div>

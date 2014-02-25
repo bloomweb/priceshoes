@@ -28,6 +28,7 @@
 				header('X-UA-Compatible: IE=edge,chrome=1');
 			}
 		?>
+		<meta name="author" content="http://www.bloomweb.co">
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, proxy-revalidate">
 		<meta http-equiv="expires" content="0">
