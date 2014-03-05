@@ -25,7 +25,42 @@
 				 <div style="clear:both;"></div>
 				<div class="cuadro-formularios">
 	            <?php echo $this -> Html->link('¿Olvidó su contraseña?',array('plugin'=>'user_control', "controller"=>"users","action"=>"resetPassword"), array("class"=>"rosa"));?>  
-	            <?php echo $this -> Form -> submit(__('Ingresar', true));?> 
+	            <?php echo $this -> Form -> submit(__('Ingresar', true));?>
+				<?php /* SECCIÓN PARA BOTON DE FB */ ?>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('#fb-button-container').click(function(e){
+							fbLoginAction();
+							e.preventDefault();
+						});
+						$('#fb-button').click(function(e){
+							fbLoginAction();
+							e.preventDefault();
+						});
+						function fbLoginAction() {
+							$.oauthpopup({
+								path: '/user_control/users/loginFacebook',
+								width:600,
+								height:300,
+								callback: function(){
+									window.location.reload();
+								}
+							});
+						}
+					});
+				</script>
+				<div id="fb-button-container">
+					<?php
+						$logout = $this->Session->read('logout');
+						if(is_null($user)) {
+							echo $this->Html->image('facebook.png',array('id'=>'fb-button'));
+						} else {
+							echo '<img src="https://graph.facebook.com/'. $ses_user['id'] .'/picture" width="30" height="30"/><div>'.$ses_user['name'].'</div>';
+							echo '<a href="'.$logout.'">Logout</a>';
+						}
+					?>
+					Ingresar
+				</div>
 	            <div style="clear:both;"></div>
 				</div>
 				<?php 

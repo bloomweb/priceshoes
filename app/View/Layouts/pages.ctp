@@ -19,12 +19,12 @@
 	//<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 	<?php //  <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> ?>
 	<?php echo $this->Html->charset(); ?>
 	<?php
-		if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
+		if(isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
 			header('X-UA-Compatible: IE=edge,chrome=1');
 		}
 	?>
@@ -55,30 +55,46 @@
 		echo $this->fetch('script');
 	?>
 	<!--[if IE]>
-
 	<link rel="stylesheet" type="text/css" href="/css/ie.css">
-
 	<![endif]-->
-
 	<script type="text/javascript">
 		/*Cufon.now();
 		 Cufon.set('fontFamily', 'HelveticaNeueLT LightExt2').replace('body');*/
 	</script>
 </head>
 <body id="pages" class="<?php echo $this->action; ?>">
-<div id="container">
-	<?php echo $this->element('header'); ?>
-	<div id="content">
-		<?php echo $this->Session->flash(); ?>
-		<?php echo $this->element('slider'); ?>
-		<?php echo $this->fetch('content'); ?>
-		<div style="clear:both;"></div>
-	</div>
-	<?php echo $this->element('footer'); ?>
-</div>
+	<?php echo $this->element('analyticstracking'); ?>
+	<div id="fb-root"></div>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '626363840745969',
+				status     : true,
+				xfbml      : true
+			});
+		};
 
-<?php echo $this->element('sql_dump'); ?>
-<?php if(!Configure::read('debug')): ?>
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_LA/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<div id="container">
+		<?php echo $this->element('header'); ?>
+		<div id="content">
+			<?php echo $this->Session->flash(); ?>
+			<?php echo $this->element('slider'); ?>
+			<?php echo $this->fetch('content'); ?>
+			<div style="clear:both;"></div>
+		</div>
+		<?php echo $this->element('footer'); ?>
+	</div>
+
+	<?php echo $this->element('sql_dump'); ?>
+	<?php if(!Configure::read('debug')): ?>
 	<!--Start of Zopim Live Chat Script-->
 	<script type="text/javascript">
 		window.$zopim || (function(d, s) {
@@ -99,6 +115,6 @@
 		})(document, 'script');
 	</script>
 	<!--End of Zopim Live Chat Script-->
-<?php endif; ?>
+	<?php endif; ?>
 </body>
 </html>

@@ -19,6 +19,39 @@
 	font-weight: normal;
 	font-style: normal;
 }
+#fb-button-container {
+    background: none repeat scroll 0 0 #3959A2;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    cursor: pointer;
+    float: right;
+    font-family: "HelveticaNeueLT LightExt",Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    height: 12px;
+    margin-right: 5px;
+    padding: 8px 8px 8px 0;
+    position: relative;
+    text-align: right;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 78px;
+}
+#fb-button-container:hover  {
+    color: #000000;
+}
+#fb-button {
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.cuadro-formularios .submit input {
+    width: 68px;
+}
 #footer .footer-info {
     padding: 20px 240px;
 }
@@ -546,7 +579,6 @@ input#CouponCode{
 	height: 28px;
 	text-align:center;
 	margin-right: 5px;
-	
 	color:white;
 	text-decoration: none;
 	/*float:right;*/

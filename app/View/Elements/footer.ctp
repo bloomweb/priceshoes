@@ -72,7 +72,7 @@
 		<?php echo $this -> element('second-nav'); ?>
 		<div class="footer-info second_nav">
 			<h4>© 2011 PriceShoes Online Store. Todos los derechos Reservados.</h4>
-			<a href="http://www.bloomweb.co"><img id="bloom-logo-footer" src="img/bloom/bloom_blanco.png" alt="bloomweb" title="bloomweb"></a>
+			<a href="http://www.bloomweb.co"><img id="bloom-logo-footer" src="<?php echo FULL_BASE_URL; ?>/img/bloom/bloom_blanco.png" alt="bloomweb" title="bloomweb"></a>
 			<div style="clear: both;"></div>
 		</div>
 	</div>

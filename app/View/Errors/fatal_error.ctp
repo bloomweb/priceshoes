@@ -1,9 +1,9 @@
 <?php if(Configure::read('debug') == 0) : ?>
-	<script type="text/javascript">
-		$(function() {
-			window.location = '/';
-		});
-	</script>
+<script type="text/javascript">
+	$(function() {
+		window.location = '/';
+	});
+</script>
 <?php else: ?>
 	<h2><?php echo $name; ?></h2>
 	<p class="error">

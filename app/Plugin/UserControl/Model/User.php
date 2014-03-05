@@ -169,14 +169,14 @@ class User extends UserControlAppModel {
 			),
 		),
 		'document' => array(
-			'notempty' => array(
+			/*'notempty' => array(
 				'rule' => array('notempty'),
 				'message' => 'Ingrese su documento',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+			),*/
 			'verifyDocument' => array(
 				'rule' => array('verifyDocument'),
 				'message' => 'El documento ya existe en los registros',
@@ -190,7 +190,9 @@ class User extends UserControlAppModel {
 	
 	public function verifyDocument() {
 		$uno = 1;
-		if(
+		if(!isset($this -> data['User']['document'])) {
+			return true;
+		} elseif (
 			isset($this -> data['User']['document'])
 			&& !empty($this -> data['User']['document'])
 		) {
@@ -346,6 +348,19 @@ class User extends UserControlAppModel {
 	public $hasOne = array(
 		'BCart' => array(
 			'className' => 'BCart.ShoppingCart',
+			'foreignKey' => 'user_id',
+			'dependent' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Oauthfb' => array(
+			'className' => 'UserControl.Oauthfb',
 			'foreignKey' => 'user_id',
 			'dependent' => true,
 			'conditions' => '',
