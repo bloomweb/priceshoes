@@ -57,10 +57,7 @@
 	<!--[if IE]>
 	<link rel="stylesheet" type="text/css" href="/css/ie.css">
 	<![endif]-->
-	<script type="text/javascript">
-		/*Cufon.now();
-		 Cufon.set('fontFamily', 'HelveticaNeueLT LightExt2').replace('body');*/
-	</script>
+    <?php $this -> element("zopin_code");?>
 </head>
 <body id="pages" class="<?php echo $this->action; ?>">
 	<?php echo $this->element('analyticstracking'); ?>
@@ -94,27 +91,5 @@
 	</div>
 
 	<?php echo $this->element('sql_dump'); ?>
-	<?php if(!Configure::read('debug')): ?>
-	<!--Start of Zopim Live Chat Script-->
-	<script type="text/javascript">
-		window.$zopim || (function(d, s) {
-			var z = $zopim = function(c) {
-				z._.push(c)
-			}, $ = z.s = d.createElement(s), e = d.getElementsByTagName(s)[0];
-			z.set = function(o) {
-				z.set._.push(o)
-			};
-			z._ = [];
-			z.set._ = [];
-			$.async = !0;
-			$.setAttribute('charset', 'utf-8');
-			$.src = '//cdn.zopim.com/?RydcgQ0EvdOO6ZP5TRy6z7UuI5kGyn9f';
-			z.t = +new Date;
-			$.type = 'text/javascript';
-			e.parentNode.insertBefore($, e)
-		})(document, 'script');
-	</script>
-	<!--End of Zopim Live Chat Script-->
-	<?php endif; ?>
 </body>
 </html>
